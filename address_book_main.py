@@ -32,9 +32,7 @@ def add_contact():
 contact = add_contact()
 print(contact)
 
-#UC3 
-
-# address_book_main.py (continuation)
+#UC3 - edit a contact
 
 def edit_contact(contact):
     print("Edit Contact Details:")
@@ -53,3 +51,17 @@ contact = add_contact()
 print(contact)
 edited_contact = edit_contact(contact)
 print(edited_contact)
+
+#UC4 - Delete a Contact
+
+def delete_contact(contacts, name):
+    for contact in contacts:
+        if contact.first_name == name or contact.last_name == name:
+            contacts.remove(contact)
+            print(f"Contact {name} deleted.")
+            return
+    print(f"Contact {name} not found.")
+
+# Example usage
+contacts = [add_contact()]
+delete_contact(contacts, "John")
